@@ -7,7 +7,7 @@ public:
 	Tree* parent;
 	Tree* left;
 	Tree* right;
-    std::string string; // для линейно-скобочной записи.
+    std::string string; 
 
 	Tree(const int v,  Tree* p)
 	{
@@ -49,7 +49,7 @@ public:
         }
 	}
 
-    Tree* search(Tree* item, int v) // поиск поддерева по элементу
+    Tree* search(Tree* item, int v) 
     {
         if (item == nullptr && item->value == v)
         {
@@ -75,7 +75,7 @@ public:
         Tree *item = this->Search(value);
         if (item == nullptr) return;
         Tree* currentTree = nullptr;
-        // удаление корня
+        // ГіГ¤Г Г«ГҐГ­ГЁГҐ ГЄГ®Г°Г­Гї
         if (this == item)
         {
             if (item->right != nullptr)
@@ -101,7 +101,6 @@ public:
             item->value = val;
 
         }
-        // удаление листьев
         else if (item->left == nullptr && item->right == nullptr && item->parent != nullptr)
         {
             if (item->parent->right == item)
@@ -113,7 +112,6 @@ public:
                 item->parent->left = nullptr;
             }
         }
-        // удаление узла, который имеет левого потомка.
         else if (item->left != nullptr && item->right == nullptr && item->parent != nullptr)
         {
             item->left->parent = item->parent;
@@ -127,7 +125,6 @@ public:
             }
 
         }
-        // удаление узла, который имеет правого потомка.
         else if (item->left == nullptr && item->right != nullptr && item->parent != nullptr)
         {
             item->right->parent = item->parent;
@@ -141,7 +138,6 @@ public:
             }
 
         }
-        // удаление узла, который имеет оба потомка.
         else if (item->left != nullptr && item->right != nullptr && item->parent != nullptr)
         {
             currentTree = item->right;
@@ -194,7 +190,7 @@ public:
        
 
     }
-    std::string toString(int value) // переводит число в строку
+    std::string toString(int value) // ГЇГҐГ°ГҐГўГ®Г¤ГЁГІ Г·ГЁГ±Г«Г® Гў Г±ГІГ°Г®ГЄГі
     {
         std::string result;
 
@@ -210,7 +206,7 @@ public:
 
         return result;
     }
-    void print(Tree* tree) // переводит дерево в линейно-скобочуню запись
+    void print(Tree* tree) 
     {
         string += toString(tree->value);
         if (tree->left != nullptr || tree->right != nullptr)
@@ -239,7 +235,7 @@ public:
         return (elem >= '0' && elem <= '9') ? true : false;
     }
 
-    Tree parse(std::string str) // парсит  строку в бинарное дерево
+    Tree parse(std::string str) 
     {
         Tree result;
         int index;
