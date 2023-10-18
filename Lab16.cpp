@@ -9,7 +9,7 @@ public:
     Tree* parent;
     Tree* left;
     Tree* right;
-    std::string string; // для линейно-скобочной записи.
+    std::string string; 
     Tree(const int v, Tree* p)
     {
         value = v;
@@ -53,7 +53,7 @@ public:
     }
 
 
-    std::string toString(int value) // переводит число в строку
+    std::string toString(int value) 
     {
         std::string result;
 
@@ -71,7 +71,7 @@ public:
     }
 
 
-    void print(Tree* tree) // переводит дерево в линейно-скобочуню запись
+    void print(Tree* tree) 
     {
         string += toString(tree->value);
         if (tree->left != nullptr || tree->right != nullptr)
@@ -104,7 +104,7 @@ public:
     }
 
 
-    Tree parse(std::string str) // парсит  строку в бинарное дерево
+    Tree parse(std::string str) 
     {
         Tree result;
         int index;
@@ -240,7 +240,7 @@ void main()
     Tree newTree = tree;
     newTree.Print();
 
-    direct(directValues, &newTree); //прямой обход
+    direct(directValues, &newTree); //ГЇГ°ГїГ¬Г®Г© Г®ГЎГµГ®Г¤
     center(centerValues, &newTree);
     reverse(reverseValues, &newTree);
 
